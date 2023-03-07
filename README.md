@@ -8,6 +8,9 @@
 :couple: Member Info
 
 - [홍진석](http://github.com/Hong-JinSuk) - CBNU_ComputerEnginnering, [E-mail](n9805h@naver.com) : n9805h@naver.com
+- [홍은성](github address) - 
+- [최원식](github address) - 
+- [황재찬](github address) - 
 
 
 <br></br>
