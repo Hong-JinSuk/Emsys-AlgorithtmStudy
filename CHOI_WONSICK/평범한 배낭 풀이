@@ -1,0 +1,34 @@
+
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
+
+struct stuff {
+    int weight;
+    int value;
+};
+
+stuff thing[101];  // 물건의 갯수는 100개.
+int n;             // 물품의 갯수
+int k;             // 준서의 가방에 담을 수 있는 물건의 무게
+int dp[101][100001];
+
+int main() {
+    cin >> n >> k;
+    for (int i = 1; i <= n; i++) {
+        cin >> thing[i].weight >> thing[i].value;  // 각물건의 무게와 가치 입력.
+    }
+    for (int i = 1; i <= n; i++) {
+        int wi = thing[i].weight;
+        int val = thing[i].value;
+        for (int j = 1; j <= k; j++) {
+            if (j < wi)
+                dp[i][j] = dp[i - 1][j];
+            else {  // j>=wi
+                dp[i][j] = max(dp[i - 1][j], val + dp[i - 1][j - wi]);
+            }
+        }
+    }
+    cout << dp[n][k];
+}
