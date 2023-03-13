@@ -10,7 +10,7 @@
 - [홍진석](http://github.com/Hong-JinSuk) - CBNU_ComputerEnginnering, [E-mail](n9805h@naver.com) : n9805h@naver.com
 - [홍은성](github address) - 
 - [최원식](https://github.com/king258436) - CBNU_Software, [E-mail](king258436@naver.com) : king258436@naver.com
-- [황재찬](github address) - CBNU_ComputerScience [E-mail](atopi0827@chungbuk.ac.kr) : atopi0827@chungbuk.ac.kr
+- [황재찬](https://github.com/OopsIForgot) - CBNU_ComputerScience [E-mail](atopi0827@chungbuk.ac.kr) : atopi0827@chungbuk.ac.kr
 
 
 <br></br>
