@@ -25,7 +25,7 @@ int main() {
 	for (int i = 0; i < n; i++) {
 		temp = coin[i];
 
-		cout << "coin : " << coin[i] << "\n";
+		//cout << "coin : " << coin[i] << "\n";
 
 		for (int j = k; j >=temp; j--) {
 			sum = 0;
@@ -34,10 +34,10 @@ int main() {
 			}
 			dp[j] = sum;
 
-			cout << "dp[" << j << "] is : " << dp[j] << " ";
+			//cout << "dp[" << j << "] is : " << dp[j] << " ";
 		}
 
-		cout << "\n";
+		//cout << "\n";
 	}
 
 	cout << dp[k];
