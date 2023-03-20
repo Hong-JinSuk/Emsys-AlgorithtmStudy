@@ -1,0 +1,27 @@
+#include <algorithm>
+#include <iostream>
+#include <string>
+using namespace std;
+
+string str, temp;
+int maxV = -1;
+bool IsItPalin() {
+    int p = 0;  // 같은 문자 의 개수
+    for (int i = 0; i < temp.length() / 2; i++) {
+        int j = temp.length() - 1 - i;
+        if (temp[i] != temp[j]) return 0;
+    }
+    return 1;
+}
+
+int main() {
+    cin >> str;
+    for (int i = 0; i < str.length() - 1; i++) {
+        for (int j = 2; j <= str.length() - i; j++) {
+            temp = str.substr(i, j);
+            if (IsItPalin()) continue;  // 펠린드롬 수 이면 넘겨보리기
+            maxV = max(maxV, (int)temp.length());
+        }
+    }
+    cout << maxV;
+}
