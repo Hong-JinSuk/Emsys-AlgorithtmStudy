@@ -1,0 +1,38 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+string str;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+
+    cin >> str;     // 문자열 입력받기
+    bool flag = 0;  // 팰린드롬 이라면 0 아니라면 1
+    bool same = 1;  // 모든 문자가 같은 문자열 이라면 1 아니라면 0
+
+    for (int i = 0; i < str.length()/2+1; i++) {
+        int j = str.length() - i - 1;  // 문자열의 중심을 기준으로 데칼코마니 로 비교 (짝수도 마찬가지)
+        if (str[i] != str[j]) {        // 데칼코마니처럼 비교하던 두 문자가 다르다면,
+            flag = 1;                  // 펠린드롬 아니라고 표시
+            break;                     // 바로 빠져나감
+        }
+        if (same == 1 && str[0] != str[i] || str[0] != str[j]) same = 0;
+        // str[0] 과 다른 문자열이 다르다면 (전부다 같은 문자가 아니라면), same = 0
+    }
+
+    if (flag) {                // 문자열이 펠린드롬이 아니라면
+        cout << str.length();  // 길이전체 출력
+    }
+
+    else {               // 문자열이 펠린드롬 이라면
+        if (same)        // 펠린드롬중에, 전부다 같은 문자열을 가진 펠린드롬이라면,
+            cout << -1;  // -1 출력
+        else
+            cout << str.length() - 1;  // 그냥 일반적인 펠린드롬이라면, 길이전체 -1 출력.
+    }
+    return 0;
+}
