@@ -11,7 +11,7 @@
 - [홍은성](http://github.com/HHJade21) - CBNU_ComputerScience, [E-mail](hiddenjade2021@gmail.com) : hiddenjade2021@gmail.com
 - [최원식](https://github.com/king258436) - CBNU_Software, [E-mail](king258436@naver.com) : king258436@naver.com
 - [황재찬](https://github.com/OopsIForgot) - CBNU_ComputerScience [E-mail](atopi0827@chungbuk.ac.kr) : atopi0827@chungbuk.ac.kr
-
+- [곽민정]
 
 <br></br>
 ####  :clipboard: 기록 방법
@@ -22,9 +22,10 @@
 
 <br></br>
 #### :mag_right: 문제 선정 방식
-- 각자 자신이 관심있는 알고리즘 혹은 풀고싶은 문제를 가져옵니다. (현재 4명 기준)
+- 각자 자신이 관심있는 알고리즘 혹은 풀고싶은 문제 2개를 가져옵니다.
+- 해결 과정에서 문제가 생기거나 이해가 안되는 부분은 이슈에 올립니다.
 - 이슈에서 해결하지 못한 문제들은 대면으로 만나서 토론합니다.
-- 홍진석 -> 최원식 -> 홍은성 -> 황재찬 순서로 문제를 가져옵니다.
+- 홍진석 -> 최원식 -> 홍은성 -> 황재찬 -> 곽민정 순서로 문제를 가져옵니다.
 
 <br></br>
 ####  :school: 대면 활동
