@@ -9,8 +9,8 @@
 
 - [홍진석](http://github.com/Hong-JinSuk) - CBNU_ComputerEnginnering, [E-mail](n9805h@naver.com) : n9805h@naver.com
 - [홍은성](http://github.com/HHJade21) - CBNU_ComputerScience, [E-mail](hiddenjade2021@gmail.com) : hiddenjade2021@gmail.com
-- [최원식](https://github.com/king258436) - CBNU_Software, [E-mail](king258436@naver.com) : king258436@naver.com
-- [황재찬](https://github.com/OopsIForgot) - CBNU_School_Of_ComputerScience [E-mail](atopi0827@chungbuk.ac.kr) : atopi0827@chungbuk.ac.kr
+- [최원식](https://github.com/king258436) - CBNU_School_Of_ComputerScience, [E-mail](king258436@naver.com) : king258436@naver.com
+- [황재찬](https://github.com/OopsIForgot) - CBNU_School_Of_ComputerScience, [E-mail](atopi0827@chungbuk.ac.kr) : atopi0827@chungbuk.ac.kr
 - [곽민정]
 
 <br></br>
