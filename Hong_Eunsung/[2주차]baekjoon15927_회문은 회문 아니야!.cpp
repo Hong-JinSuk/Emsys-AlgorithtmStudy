@@ -1,6 +1,6 @@
 #include<iostream>
 
-//1. ÀüÃ¼°¡ °°Àº ¹®ÀÚ·Î ÀÌ·ç¾îÁø ¹®ÀÚ¿­ÀÎÁö ÆÇº°ÇÑ´Ù. 2. Æç¸°µå·ÒÀÎÁö ¾Æ´ÑÁö ÅõÆ÷ÀÎÅÍ·Î È®ÀÎÇÑ´Ù.
+//1. ì „ì²´ê°€ ê°™ì€ ë¬¸ìžë¡œ ì´ë£¨ì–´ì§„ ë¬¸ìžì—´ì¸ì§€ íŒë³„í•œë‹¤. 2. íŽ ë¦°ë“œë¡¬ì¸ì§€ ì•„ë‹Œì§€ íˆ¬í¬ì¸í„°ë¡œ í™•ì¸í•œë‹¤.
 using namespace std;
 
 int main() {
