@@ -11,7 +11,7 @@
 - [홍은성](http://github.com/HHJade21) - CBNU_ComputerScience, [E-mail](hiddenjade2021@gmail.com) : hiddenjade2021@gmail.com
 - [최원식](https://github.com/king258436) - CBNU_School_Of_ComputerScience, [E-mail](king258436@naver.com) : king258436@naver.com
 - [황재찬](https://github.com/OopsIForgot) - CBNU_School_Of_ComputerScience, [E-mail](atopi0827@chungbuk.ac.kr) : atopi0827@chungbuk.ac.kr
-- [곽민정]
+- [곽민정](https://github.com/dotoooo22) - CBNU_School_Of_ComputerScience, [E-mail](alswjd15z@chungbuk.ac.kr) : alswjd15z@chungbuk.ac.kr
 
 <br></br>
 ####  :clipboard: 기록 방법
