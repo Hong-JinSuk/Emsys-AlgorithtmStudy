@@ -4,40 +4,39 @@
 #include <cstring>
 #include <algorithm>
 
-std::queue<std::string> a[81], ok;
+using namespace std;
+
+queue<string> a[81], ok;
 char start[81];
 char gyarados[81];
 
-void gurf();
+void vurp();
 bool able(const char*, const char*);
 
 int main() {
-    std::string g = "입력용 임시변수";
+    string g = "입력용 임시변수";
     int d, nlen;
     scanf("%d%s", &d, start);
     nlen = strlen(start);
     strcpy(gyarados,start);
     for(int i=0; i<d; i++){
-        std::cin>>g;
+        cin>>g;
         a[g.length()].push(g);
     }
-    std::queue<std::string> tmp;
-    std::swap(ok, tmp);
+    queue<string> tmp;
+    swap(ok, tmp);
     g = start;
     ok.push(g);
-    while(!ok.empty()){
-        gurf();
-    }
+    vurp();
     printf("%s", gyarados);
 }
 
-void gurf(){
-    std::queue<std::string> save;
+void vurp(){
     while(!ok.empty()){
         int l = ok.front().length(), k = a[l+1].size();
         for(int i=0; i<k; i++){
             if(able(ok.front().c_str(), a[l+1].front().c_str())){
-                save.push(a[l+1].front());
+                ok.push(a[l+1].front());
             }else{
                 a[l+1].push(a[l+1].front());
             }
@@ -46,7 +45,6 @@ void gurf(){
         strcpy(gyarados, ok.front().c_str());
         ok.pop();
     }
-    std::swap(ok,save);
     return;
 }
 
