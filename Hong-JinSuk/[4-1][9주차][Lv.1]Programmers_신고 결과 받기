@@ -1,0 +1,91 @@
+/// 비쥬얼 스튜디오 버전
+
+#include<iostream>
+#include<vector>
+#include<string>
+#include<map>
+#include<set>
+#include<sstream>
+using namespace std;
+
+int main() {
+	
+    vector<string> id_list = { "muzi", "frodo", "apeach", "neo" };
+    vector<string> report = { "muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi" };
+    vector<int> answer(id_list.size(), 0);
+    int k = 2;
+    map<string, set<string>> does; // 신고당한놈, 한놈
+
+    map<string, int> id_idx;
+    for (int i = 0; i < id_list.size(); i++) {
+        id_idx[id_list[i]] = i; // con = 0, ryan = 1 의 인덱스를 줌
+    }
+
+    string a, b;
+    for (int i = 0; i < report.size(); i++) {
+        stringstream s(report[i]);
+        s >> a >> b;
+        does[b].insert(a);
+    }
+    
+    for (auto i : does) { // does 의 모든 element를 i로 받아옴
+        if (i.second.size() >= k) { // k이상 신고시 정지
+            for (auto j : i.second) {
+                int index = id_idx[j];
+                answer[index]++;
+            }
+        }
+    }
+
+    for (int i = 0; i < id_list.size(); i++) {
+        cout << answer[i] << " ";
+    }
+
+	return 0;
+}
+
+/// 제출한 코드
+
+#include<iostream>
+#include<vector>
+#include<string>
+#include<map>
+#include<set>
+#include<sstream>
+using namespace std;
+
+int main() {
+	
+    vector<string> id_list = { "muzi", "frodo", "apeach", "neo" };
+    vector<string> report = { "muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi" };
+    vector<int> answer(id_list.size(), 0);
+    int k = 2;
+    map<string, set<string>> does; // 신고당한놈, 한놈
+
+    map<string, int> id_idx;
+    for (int i = 0; i < id_list.size(); i++) {
+        id_idx[id_list[i]] = i; // con = 0, ryan = 1 의 인덱스를 줌
+    }
+
+    string a, b;
+    for (int i = 0; i < report.size(); i++) {
+        stringstream s(report[i]);
+        s >> a >> b;
+        does[b].insert(a);
+    }
+    
+    for (auto i : does) { // does 의 모든 element를 i로 받아옴
+        if (i.second.size() >= k) { // k이상 신고시 정지
+            for (auto j : i.second) {
+                int index = id_idx[j];
+                answer[index]++;
+            }
+        }
+    }
+
+    for (int i = 0; i < id_list.size(); i++) {
+        cout << answer[i] << " ";
+    }
+
+	return 0;
+}
