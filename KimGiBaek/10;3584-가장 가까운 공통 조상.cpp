@@ -2,7 +2,7 @@
 #include <queue>
 
 void test();
-int find(int a, int b, int tree[], int level[]);
+int find(int a, int b, int tree[]);
 
 int main() {
     int t;
@@ -13,39 +13,42 @@ int main() {
 }
 
 void test(){
-    int n, tree[10009]={0}, a, b, top, level[10009]={0};
+    int n, tree[10009]={0}, a, b, top;
     scanf("%d", &n);
     for(int i=0; i<n-1; i++){
         scanf("%d %d", &a, &b);
         tree[b] = a;
     }
     scanf("%d %d", &a, &b);
-    for(int i=1; i<=n; i++){
-        if(tree[i]==0){
-            top = tree[i];
-            level[i] = 1;
-        }
-    }
-    for(int i=2; ; i++){
-        bool set = false;
-        for(int j=1; j<=n; j++){
-            if(level[tree[j]]==i-1){
-                level[j] = i;
-                set = true;
-            }
-        }
-        if(!set)
-            break;
-    }
-    printf("%d\n", find(a,b,tree,level));
+    printf("%d\n", find(a,b,tree));
 }
 
-int find(int a, int b, int tree[], int level[]){
-    while(level[a]>level[b]){
-        a = tree[a];
+int find(int a, int b, int tree[]){
+    int alvl, blvl, tmp, cnt;
+    
+    tmp = tree[a];
+    cnt = 1;
+    while(tmp){
+        tmp = tree[tmp];
+        cnt++;
     }
-    while(level[a]<level[b]){
+    alvl = cnt;
+
+    tmp = tree[b];
+    cnt = 1;
+    while(tmp){
+        tmp = tree[tmp];
+        cnt++;
+    }
+    blvl = cnt;
+    
+    while(alvl>blvl){
+        a = tree[a];
+        alvl--;
+    }
+    while(alvl<blvl){
         b = tree[b];
+        blvl--;
     }
     while(a!=b){
         a = tree[a];
