@@ -1,9 +1,8 @@
 #include <iostream>
-#include <cstring>
 #include <math.h>
 
-bool chk[5000000], sosu[5000005];
-int woong[3], gyu[3], schk=1;
+bool chk[5000001], sosu[5000001];
+int woong[3], gyu[3];
 long long ws,gs;
 
 void rank(int h[3], int s);
@@ -11,7 +10,7 @@ void findSosu(int m);
 
 int main() {
     int n, w, g;
-    findSosu(5000002);
+    findSosu(5000001);
     scanf("%d", &n);
     for(int i=0; i<n; i++){
         scanf("%d %d", &w, &g);
@@ -67,13 +66,15 @@ void rank(int h[3], int s){
     else if(h[2]<s)
         h[2] = s;
 }
-    //printf("%d",(int)sqrt(10));
 
 void findSosu(int m){
-    memset(sosu+2, true, sizeof(bool) * (m-2));
-    for(int i=2; i<=sqrt(m); i++){
+    sosu[2] = true;
+    for(int i=3; i<=m; i+=2){
+        sosu[i] = true;
+    }
+    for(int i=3; i<=sqrt(m); i++){
         if(sosu[i]){
-            for(int j=i*2; j<=m; j+=i){
+            for(int j=i*3; j<=m; j+=i*2){
                 sosu[j] = false;
             }
         }
