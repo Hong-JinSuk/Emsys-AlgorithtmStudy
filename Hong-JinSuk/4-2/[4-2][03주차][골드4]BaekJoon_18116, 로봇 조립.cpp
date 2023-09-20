@@ -4,7 +4,7 @@
 #define MAX 1000001
 using namespace std;
 
-// ±âÁ¸ ½Ã°£ÃÊ°úÇÑ ÄÚµå(ÃÖÀûÈ­ X, ·ÎÁ÷Àº ºñ½Á)
+// ê¸°ì¡´ ì‹œê°„ì´ˆê³¼í•œ ì½”ë“œ(ìµœì í™” X, ë¡œì§ì€ ë¹„ìŠ·)
 //struct in_out
 //{
 //	vector<int> in;
@@ -18,11 +18,11 @@ using namespace std;
 //void Search(int cur, int& answer) {
 //	isvisit[cur] = true;
 //	answer++;
-//	for (auto Post : Robot[cur].in) { // ³ª¸¦ Áö¸ñÇÑ ³ğµé
+//	for (auto Post : Robot[cur].in) { // ë‚˜ë¥¼ ì§€ëª©í•œ ë†ˆë“¤
 //		if(!isvisit[Post])
 //			Search(Post, answer);
 //	}
-//	for (auto Next : Robot[cur].out) { // ³»°¡ Áö¸ñÇÑ ³ğµé
+//	for (auto Next : Robot[cur].out) { // ë‚´ê°€ ì§€ëª©í•œ ë†ˆë“¤
 //		if(!isvisit[Next])
 //			Search(Next, answer);
 //	}
@@ -36,7 +36,7 @@ using namespace std;
 //	for (int i = 0; i < n; i++) {
 //		cin >> key;
 //		if (key == 'I') {
-//			cin >> a >> b; // b°¡ a¸¦ Áö¸ñ
+//			cin >> a >> b; // bê°€ aë¥¼ ì§€ëª©
 //			Robot[a].in.push_back(b); // a <- b
 //			Robot[b].out.push_back(a); // b -> a
 //		}
@@ -54,21 +54,21 @@ int Parent[MAX];
 int Sum[MAX];
 
 int Find_Parent(int cur) {
-	if (Parent[cur] == cur) return cur; // ³¡°¡Áö ¿ÔÀ¸¸é ³¡
-	return Parent[cur] = Find_Parent(Parent[cur]); // ±×°Ô ¾Æ´Ï¸é ³¡±îÁö ¤¡¤¡
+	if (Parent[cur] == cur) return cur; // ëê°€ì§€ ì™”ìœ¼ë©´ ë
+	return Parent[cur] = Find_Parent(Parent[cur]); // ê·¸ê²Œ ì•„ë‹ˆë©´ ëê¹Œì§€ ã„±ã„±
 }
 
 void union_set(int A, int B) {
 	int A_parent = Find_Parent(A);
 	int B_parent = Find_Parent(B);
 
-	// ÀÌ¹Ì °¡Á·ÀÌ¸é
+	// ì´ë¯¸ ê°€ì¡±ì´ë©´
 	if (A_parent == B_parent) return;
 	else {
-		// ´õ ÀÛÀº³ğÀ» ºÎ¸ğ¶ó ÇÏÀÚ
+		// ë” ì‘ì€ë†ˆì„ ë¶€ëª¨ë¼ í•˜ì
 		int Min = min(A_parent, B_parent);
 		int Max = max(A_parent, B_parent); 
-		Parent[Max] = Min; // ³Êµµ ÀÚ½ÄÀÌ µÇ¶ó
+		Parent[Max] = Min; // ë„ˆë„ ìì‹ì´ ë˜ë¼
 		Sum[Min] += Sum[Max];
 		Sum[Max] = 0;
 	}
@@ -86,7 +86,7 @@ void input() {
 		}
 		else if (key == 'Q') {
 			cin >> now;
-			int answer = Find_Parent(now); // ºÎ¸ğ¸¦ Ã£°í
+			int answer = Find_Parent(now); // ë¶€ëª¨ë¥¼ ì°¾ê³ 
 			cout << Sum[answer] << endl;
 		}
 	}
@@ -96,8 +96,8 @@ int main() {
 	ios_base::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
 
 	for (int i = 1; i < MAX; i++) {
-		Parent[i] = i; // ÀÚ±âÀÚ½Å
-		Sum[i] = 1; // ±âº»°ªÀº ºÎÇ°ÀÌ 1°³ÇÊ¿ä
+		Parent[i] = i; // ìê¸°ìì‹ 
+		Sum[i] = 1; // ê¸°ë³¸ê°’ì€ ë¶€í’ˆì´ 1ê°œí•„ìš”
 	}
 
 	input();
