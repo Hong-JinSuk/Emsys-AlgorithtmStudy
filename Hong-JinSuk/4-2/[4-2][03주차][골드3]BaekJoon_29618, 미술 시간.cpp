@@ -1,4 +1,4 @@
-// 79% ¿¡¼­ ¾È³Ñ¾î°¨
+// 79% ì—ì„œ ì•ˆë„˜ì–´ê°
 #include <iostream>
 #include <vector>
 #include <tuple>
@@ -8,21 +8,21 @@
 using namespace std;
 
 int n, q;
-long long Box[MAX]; // Á÷»ç°¢Çü¿¡ »öÄ¥ÇÒ ¹è¿­
-int Next[MAX]; // ÇöÀçÄ­¿¡¼­ ÀÌµ¿ÇÒ ´ÙÀ½Ä­ ÀúÀå
+long long Box[MAX]; // ì§ì‚¬ê°í˜•ì— ìƒ‰ì¹ í•  ë°°ì—´
+int Next[MAX]; // í˜„ì¬ì¹¸ì—ì„œ ì´ë™í•  ë‹¤ìŒì¹¸ ì €ì¥
 int cnt = 0;
 void Painting(int start, int end, int x) {
 	int next = Next[end + 1];
 	int post = start - 1;
-	// 1~1, 2~2, 3~3, 4~4, ... , 100000~100000 ¿¡ ¾àÇÔ
-	//while (1) { // ÀÌÀüÀÇ ¹Ú½º¿¡¼­µµ next·Î ÀÌµ¿ÇÒ ¼ö ÀÖ°Ô ¸¶Å·ÇÔ
+	// 1~1, 2~2, 3~3, 4~4, ... , 100000~100000 ì— ì•½í•¨
+	//while (1) { // ì´ì „ì˜ ë°•ìŠ¤ì—ì„œë„ nextë¡œ ì´ë™í•  ìˆ˜ ìˆê²Œ ë§ˆí‚¹í•¨
 	//	if (Next[post] == post || Next[post] == next) {
 	//		break;
 	//	}
 	//	Next[post] = next;
 	//	post--;
 	//}
-	// 5000¸¸ / 10^5
+	// 5000ë§Œ / 10^5
 	if (cnt == 500) {
 		int temp = MAX;
 		for (int i = n + 1; i > 0; i--) {
@@ -34,15 +34,15 @@ void Painting(int start, int end, int x) {
 		}
 		cnt = 0;
 	}
-	// À§¿¡²¬ ¾È¾²ÀÚ´Ï 1~1, 2~2, 3~3 ... 50000~50000 ÇÏ°í 1~50000 ¹İº¹¿¡ ¾àÇÔ
+	// ìœ„ì—ê»„ ì•ˆì“°ìë‹ˆ 1~1, 2~2, 3~3 ... 50000~50000 í•˜ê³  1~50000 ë°˜ë³µì— ì•½í•¨
 	while (start <= end) {
-		if (Box[start] == 0) { // ¾ÆÁ÷»öÄ¥ÇÏÁö ¾ÊÀº Ä­ÀÌ¸é
-			Box[start] = x; // »öÄ¥
-			Next[start] = next; // ¸¶Å·
-			start++; // ´ÙÀ½ Ä­À¸·Î
+		if (Box[start] == 0) { // ì•„ì§ìƒ‰ì¹ í•˜ì§€ ì•Šì€ ì¹¸ì´ë©´
+			Box[start] = x; // ìƒ‰ì¹ 
+			Next[start] = next; // ë§ˆí‚¹
+			start++; // ë‹¤ìŒ ì¹¸ìœ¼ë¡œ
 		}
-		else { // ÀÌ¹Ì »öÄ¥ÇÑ Ä­ÀÌ¸é
-			start = Next[start]; // ´ÙÀ½ Ä­À¸·Î ÀÌµ¿
+		else { // ì´ë¯¸ ìƒ‰ì¹ í•œ ì¹¸ì´ë©´
+			start = Next[start]; // ë‹¤ìŒ ì¹¸ìœ¼ë¡œ ì´ë™
 		}
 	}
 }
@@ -61,7 +61,7 @@ int main() {
 	ios_base::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
 
 	for (int i = 1; i < MAX; i++)
-		Next[i] = i; // ÀÚ±â ÀÚ½ÅÀ» Ä¥ÇØ¾ßÇÔ
+		Next[i] = i; // ìê¸° ìì‹ ì„ ì¹ í•´ì•¼í•¨
 	
 	input();
 
