@@ -10,7 +10,7 @@ int xx1, yy1, xx2, yy2;
 
 void wind(int m=25050025);
 
-void outout(int big) {
+void outout(int big) { //상남자식 이쁜 출력방법
 	if (big / 10 == 0) {
 		for (int i = yy1; i <= yy2; i++) {
 			for (int j = xx1; j <= xx2; j++) {
